@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystals forms</title> <!-- Título inicial -->
+    <style>
+        #menu-left {
+            position: absolute;
+            top: 0;
+            right: 55%; /* Ajusta el porcentaje de posición */
+            width: 8%; /* Ajusta el porcentaje de ancho */
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 0.3vw; /* Relleno en unidades relativas */
+            border-radius: 5px;
+        }
+
+        #menu-center {
+            position: absolute;
+            top: 0;
+            right: 45%; /* Ajusta el porcentaje de posición */
+            width: 8%; /* Ajusta el porcentaje de ancho */
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 0.3vw; /* Relleno en unidades relativas */
+            border-radius: 5px;
+        }
+
+        #menu-right {
+            position: absolute;
+            top: 0;
+            right: 30%; /* Ajusta el porcentaje de posición */
+            width: 8%; /* Ajusta el porcentaje de ancho */
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 0.3vw; /* Relleno en unidades relativas */
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-style: italic; /* Subtítulos en cursiva */
+            font-size: 0.8vw; /* Tamaño de fuente en unidades relativas */
+            margin-bottom: 0.3vw; /* Menor separación entre subtítulos */
+        }
+
+        button {
+            background: linear-gradient(to bottom, #FF6347 0%, #FF69B4 100%); /* Degradado de rojo a rosa */
+            color: white;
+            border: none;
+            padding: 0.3vw 1vw; /* Relleno en unidades relativas */
+            margin-bottom: 0.1vw; /* Menor separación entre botones */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.5vw; /* Tamaño de fuente en unidades relativas */
+            white-space: nowrap; /* Evita el salto de línea en los nombres largos */
+        }
+
+        button:hover {
+            background: linear-gradient(to bottom, #45a049 0%, #0077a3 100%); /* Cambio de gradiente al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+ 
+<canvas class="webgl"></canvas>
+<div id="menu-left">
+    <h2 id="figure-title">Crystals forms</h2> <!-- Título inicial -->
+    <h3>1 face</h3>
+    <ul>
+        <li><button onclick="loadScript('script1','Pedion')">Pedion</button></li>
+    </ul>
+    <h3>2 faces</h3>
+    <ul>
+        <li><button onclick="loadScript('script2','Pinacoid')">Pinacoid</button></li>
+        <li><button onclick="loadScript('script3','Doma')">Doma</button></li>
+        <li><button onclick="loadScript('script4','Sphenoid')">Sphenoid</button></li>
+    </ul>
+    <h3>3 faces</h3>
+    <ul>
+        <li><button onclick="loadScript('script5','Trigonal prism')">Trigonal prism</button></li>
+        <li><button onclick="loadScript('script6','Trigonal pyramid')">Trigonal pyramid</button></li>
+    </ul>
+    <h3>4 faces</h3>
+    <ul>
+        <li><button onclick="loadScript('script7','Rhombic prism')">Rhombic prism</button></li>
+        <li><button onclick="loadScript('script8','Tetragonal prism')">Tetragonal prism</button></li>
+        <li><button onclick="loadScript('script9','Tetragonal pyramid')">Tetragonal pyramid</button></li>
+        <li><button onclick="loadScript('script10','Rhombic pyramid')">Rhombic pyramid</button></li>
+        <li><button onclick="loadScript('script11','Rhombic disphenoid')">Rhombic disphenoid</button></li>
+        <li><button onclick="loadScript('script12','Tetragonal disphenoid')">Tetragonal disphenoid</button></li>
+        <li><button onclick="loadScript('script13','Tetrahedron')">Tetrahedron</button></li>
+    </ul>
+</div>
+
+<div id="menu-center">
+    <h3>6 faces</h3>
+    <ul>
+        <li><button onclick="loadScript('script14','Hexagonal prism')">Hexagonal prism</button></li>
+        <li><button onclick="loadScript('script15','Ditrigonal prism')">Ditrigonal prism</button></li>
+        <li><button onclick="loadScript('script16','Hexagonal piramid')">Hexagonal piramid</button></li>
+        <li><button onclick="loadScript('script17','Ditrigonal piramid')">Ditrigonal piramid</button></li>
+        <li><button onclick="loadScript('script18','Trigonal dipyramid')">Trigonal dipyramid</button></li>
+        <li><button onclick="loadScript('script19','Trigonal trapezohedron')">Trigonal trapezohedron</button></li>
+        <li><button onclick="loadScript('script20','Rhombohedron')">Rhombohedron</button></li>
+        <li><button onclick="loadScript('script21','Hexahedron (cube)')">Hexahedron (cube)</button></li>
+    </ul>
+	<h3>8 faces</h3>
+    <ul>
+        <li><button onclick="loadScript('script22','Ditetragonal prism')">Ditetragonal prism</button></li>
+        <li><button onclick="loadScript('script23','Ditetragonal pyramid')">Ditetragonal pyramid</button></li>
+        <li><button onclick="loadScript('script24','Rhombic dipyramid')">Rhombic dipyramid</button></li>
+        <li><button onclick="loadScript('script25','Tetragonal dipyramid')">Tetragonal dipyramid</button></li>
+        <li><button onclick="loadScript('script26','Octahedron')">Octahedron</button></li>
+        <li><button onclick="loadScript('script27','Tetragonal trapezohedron')">Tetragonal trapezohedron</button></li>
+        <li><button onclick="loadScript('script28','Tetragonal scalenohedron')">Tetragonal scalenohedron</button></li>
+    </ul>
+    <h3>12 faces</h3>
+    <ul>
+        <li><button onclick="loadScript('script29','Dihexagonal prism')">Dihexagonal prism</button></li>
+        <li><button onclick="loadScript('script30','Dihexagonal pyramid')">Dihexagonal pyramid</button></li>
+        <li><button onclick="loadScript('script31','Hexagonal dipyramid')">Hexagonal dipyramid</button></li>
+        <li><button onclick="loadScript('script32','Ditrigonal dipyramid')">Ditrigonal dipyramid</button></li>
+        <li><button onclick="loadScript('script33','Hexagonal trapezohedron')">Hexagonal trapezohedron</button></li>
+        <li><button onclick="loadScript('script34','Hexagonal scalenohedron')">Hexagonal scalenohedron</button></li>
+        <li><button onclick="loadScript('script35','Rhombic dodecahedron')">Rhombic dodecahedron</button></li>
+        <li><button onclick="loadScript('script36','Deltoid-dodecahedron')">Deltoid-dodecahedron</button></li>
+        <li><button onclick="loadScript('script37','Tristetrahedron')">Tristetrahedron</button></li>
+        <li><button onclick="loadScript('script38','Pentagonal dodecahedron')">Pentagonal dodecahedron</button></li>
+        <li><button onclick="loadScript('script39','Pentagon-tritetrahedron (tetartoid)')">Pentagon-tritetrahedron (tetartoid)</button></li>
+    </ul>
+</div>
+
+<div id="menu-right">
+    <h3>16 faces</h3>
+    <ul>
+        <li><button onclick="loadScript('script40','Ditetragonal dipyramid')">Ditetragonal dipyramid</button></li>
+    </ul>
+    <h3>24 faces</h3>
+    <ul>
+        <li><button onclick="loadScript('script41','Dihexagonal dipyramid')">Dihexagonal dipyramid</button></li>
+        <li><button onclick="loadScript('script42','Deltoid-icositetrahedron (trapezohedron)')">Deltoid-icositetrahedron (trapezohedron)</button></li>
+        <li><button onclick="loadScript('script43','Trisoctahedron')">Trisoctahedron</button></li>
+        <li><button onclick="loadScript('script44','Tetrahexahedron')">Tetrahexahedron</button></li>
+        <li><button onclick="loadScript('script45','Hextetrahedron')">Hextetrahedron</button></li>
+        <li><button onclick="loadScript('script46','Didodecahedron')">Didodecahedron (diploid)</button></li>
+        <li><button onclick="loadScript('script47','Pentagon-trioctahedron (gyroid)')">Pentagon-trioctahedron (gyroid)</button></li>
+    </ul>
+    <h3>48 faces</h3>
+    <ul>
+        <li><button onclick="loadScript('script48','Hexoctahedron')">Hexoctahedron</button></li>
+    </ul>
+</div>
+<!-- Texto para mostrar/ocultar el eje -->
+<p style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); font-size: 20px;">
+    Para mostrar/ocultar el eje, presione la tecla 't'
+</p>
+
+<script>
+    function loadScript(scriptName,Name) {
+        // Obtener el nombre del script sin la extensión
+        var scriptNameWithoutExtension = scriptName.split('.')[0];
+        // Agregar el nombre del script como parámetro en la URL y recargar la página
+        window.location.href = window.location.pathname + '?script=' + scriptNameWithoutExtension + '&Name=' + Name;
+        // Cambiar el título al nombre de la figura cuando se hace clic en un botón
+    }
+
+    // Obtener el parámetro de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const scriptToLoad = urlParams.get('script');
+	const scriptToName = urlParams.get('Name');
+
+    // Cargar el script correspondiente si hay un parámetro en la URL
+    if (scriptToLoad) {
+        var script = document.createElement('script');
+        script.type = 'module'; // Indicar que es un módulo
+        script.src = scriptToLoad + '.js';
+        document.head.appendChild(script);
+        
+        // Cambiar el título al nombre de la figura si se carga un script automáticamente
+        document.getElementById("figure-title").innerText = scriptToName;
+    }
+</script>
+
+</body>
+</html>
